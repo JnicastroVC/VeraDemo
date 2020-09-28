@@ -27,4 +27,4 @@ steps:
     script: |
       curl https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip -o pipeline-scan.zip
       & { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('pipeline-scan.zip', 'veracode_scanner'); }
-      java -jar veracode_scanner\\pipeline-scan.jar -vid $env:Veracode_ID -vkey $env:Veracode_ID -f "target/verademo.war"
+      java -jar veracode_scanner\\pipeline-scan.jar -vid $env:Veracode_ID -vkey $env:Veracode_Key -f "target/verademo.war"
